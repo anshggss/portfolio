@@ -1,0 +1,89 @@
+/* Slide Top */
+.slide-top {
+    opacity: 0;
+    animation: slidetop 0.25s linear forwards;
+}
+
+@keyframes slidetop {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide Left (plays after Slide Top) */
+.slide-left {
+    opacity: 0;
+    animation: slideleft 0.25s linear forwards;
+    animation-delay: 0.25s;
+    /* Delay it by 0.25s to start after Slide Top */
+}
+
+@keyframes slideleft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Slide Right (plays after Slide Left) */
+.slide-right {
+    opacity: 0;
+    animation: slideright 0.25s linear forwards;
+    animation-delay: 0.5s;
+    /* Delay it by 0.5s to start after Slide Left */
+}
+
+@keyframes slideright {
+    0% {
+        
+        transform: translateX(100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.typing-effect {
+    width: 8ch;
+    animation: typing 3s steps(8) alternate infinite, blink 1s step-end infinite;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-family: monospace;
+}
+
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+    15%{
+        width: 0;
+    }
+
+    50% {
+        width: 8ch;
+    }
+
+    100% {
+        width: 8ch;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
