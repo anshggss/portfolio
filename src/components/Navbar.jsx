@@ -26,29 +26,61 @@ function Navbar() {
   }, []);
 
   return (
-    <div className="bg-[#2B2B2B] w-full h-16 flex justify-end items-center shadow-lg gap-4 sticky top-0 z-50">
+    <div className="bg-[#171010] w-full h-16 flex justify-end items-center shadow-sm gap-4 sticky top-0 z-50 shadow-[#0D0B0B] ">
       {/* Desktop Menu */}
       <div className="flex items-center gap-4 max-sm:hidden h-full">
-        {["/", "/projects", "/skills", "/contact", "/resume"].map((path) => {
-          const pathName = path.split("/")[1];
-          const displayName = pathName
-            ? pathName.charAt(0).toUpperCase() + pathName.slice(1)
-            : "";
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive
+              ? "text-[#362222] bg-[#EEEEEE] font-bold text-xl h-full w-24 flex items-center justify-center transition-all"
+              : "h-full text-[#EEEEEE] font-bold text-xl hover:bg-[#362222] hover:text-[#EEEEEE] w-24 flex items-center justify-center transition-all"
+          }
+        >
+          About
+        </NavLink>
 
-          return (
-            <NavLink
-              key={path}
-              to={path}
-              className={({ isActive }) =>
-                isActive
-                  ? "text-[#362222] bg-[#EEEEEE] font-bold text-xl h-full w-24 flex items-center justify-center transition-all"
-                  : "h-full text-[#EEEEEE] font-bold text-xl hover:bg-[#362222] hover:text-[#EEEEEE] w-24 flex items-center justify-center transition-all"
-              }
-            >
-              {displayName ? displayName : "About"}
-            </NavLink>
-          );
-        })}
+        <NavLink
+          to="/projects"
+          className={({ isActive }) =>
+            isActive
+              ? "text-[#362222] bg-[#EEEEEE] font-bold text-xl h-full w-24 flex items-center justify-center transition-all"
+              : "h-full text-[#EEEEEE] font-bold text-xl hover:bg-[#362222] hover:text-[#EEEEEE] w-24 flex items-center justify-center transition-all"
+          }
+        >
+          Projects
+        </NavLink>
+
+        <NavLink
+          to="/skills"
+          className={({ isActive }) =>
+            isActive
+              ? "text-[#362222] bg-[#EEEEEE] font-bold text-xl h-full w-24 flex items-center justify-center transition-all"
+              : "h-full text-[#EEEEEE] font-bold text-xl hover:bg-[#362222] hover:text-[#EEEEEE] w-24 flex items-center justify-center transition-all"
+          }
+        >
+          Skills
+        </NavLink>
+
+        <a
+          href="https://linktr.ee/shadyggs"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="h-full text-[#EEEEEE] font-bold text-xl hover:bg-[#362222] hover:text-[#EEEEEE] w-24 flex items-center justify-center transition-all"
+        >
+          Contact
+        </a>
+
+        <NavLink
+          to="/resume"
+          className={({ isActive }) =>
+            isActive
+              ? "text-[#362222] bg-[#EEEEEE] font-bold text-xl h-full w-24 flex items-center justify-center transition-all"
+              : "h-full text-[#EEEEEE] font-bold text-xl hover:bg-[#362222] hover:text-[#EEEEEE] w-24 flex items-center justify-center transition-all"
+          }
+        >
+          Resume
+        </NavLink>
       </div>
 
       {/* Mobile Menu Button */}

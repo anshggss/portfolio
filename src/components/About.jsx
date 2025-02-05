@@ -20,17 +20,18 @@ function About() {
 
   return (
     <>
-      <div className="w-full h-fit grid grid-cols-4 max-sm:grid-cols-1 max-sm:grid-rows-2 grid-rows-2 gap-4 bg-[#171010]">
+      <div className="w-full h-fit grid grid-cols-4 max-sm:grid-cols-1 max-sm:grid-rows-2 grid-rows-2 gap-4 bg-[#171010] ">
         {/* Profile Section */}
-        <div className="h-96 p-4 flex col-span-1 max-sm:col-span-1 justify-center bg-[#423F3E] rounded-2xl items-center hover:shadow-xl transition-all">
-          <div className="flex rounded-full overflow-hidden w-64 h-64 justify-center items-center shadow-lg transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl ">
+        <div className="h-96 p-4 flex col-span-1 max-sm:col-span-1 justify-center bg-[#423F3E] rounded-sm items-center hover:shadow-xl transition-all ">
+          <div className="flex rounded-full overflow-hidden w-64 h-64 justify-center items-center shadow-lg transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:drop-shadow-xl border-2 border-[#171010]">
             <img src={Pfp} alt="pfp" className="h-full w-full object-cover" />
           </div>
         </div>
 
         {/* About Me Text Section */}
-        <div className="h-96 p-4 bg-[#423F3E] col-span-3 max-sm:col-span-1  rounded-2xl text-[#EEEEEE] flex-1 overflow-auto cursor-default hover:shadow-xl transition-all">
-          <div className="flex text-5xl font-bold m-4 typing-effect">
+
+        <div className="h-96 p-4 bg-[#423F3E] col-span-3 max-sm:col-span-1  rounded-sm text-[#EEEEEE] flex-1 overflow-auto cursor-default hover:shadow-xl transition-all ">
+          <div className="flex text-5xl font-bold m-4 typing-effect ">
             About Me
           </div>
           <div className="mx-4 my-8 flex flex-col gap-3">
@@ -51,13 +52,13 @@ function About() {
         </div>
 
         {/* Box containing the moving ball */}
-        <div className="w-full flex flex-col bg-[#423F3E] col-span-4 max-sm:hidden rounded-2xl outline-2 outline-offset-2 outline-dashed outline-[#2B2B2B]">
+        <div className="w-full flex flex-col bg-[#423F3E] col-span-4 max-sm:hidden rounded-sm outline-2 outline-offset-2 outline-dashed outline-[#2B2B2B] ">
           <div className="m-4 text-[#EEEEEE] text-lg">Wash your hands</div>
           <div className="relative flex-1">
             <img
               src={Soap}
               alt="Soap"
-              className="w-12 h-12 rounded-full absolute transition-all duration-200 ease-in-out cursor-pointer"
+              className="w-20 h-20 rounded-full absolute transition-all duration-200 ease-in-out cursor-pointer"
               style={{ top: ballPosition.top, left: ballPosition.left }}
               onMouseEnter={moveBall}
             />
