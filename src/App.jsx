@@ -6,48 +6,53 @@ import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import Resume from "./components/Resume";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: (
+        <Layout>
+          <About />
+        </Layout>
+      ),
+    },
+    {
+      path: "/projects",
+      element: (
+        <Layout>
+          <Projects />
+        </Layout>
+      ),
+    },
+    {
+      path: "/skills",
+      element: (
+        <Layout>
+          <Skills />
+        </Layout>
+      ),
+    },
+    {
+      path: "/contact",
+      element: (
+        <Layout>
+          <Contact />
+        </Layout>
+      ),
+    },
+    {
+      path: "/resume",
+      element: (
+        <Layout>
+          <Resume />
+        </Layout>
+      ),
+    },
+  ],
   {
-    path: "/",
-    element: (
-      <Layout>
-        <About />
-      </Layout>
-    ),
-  },
-  {
-    path: "/projects",
-    element: (
-      <Layout>
-        <Projects />
-      </Layout>
-    ),
-  },
-  {
-    path: "/skills",
-    element: (
-      <Layout>
-        <Skills />
-      </Layout>
-    ),
-  },
-  {
-    path: "/contact",
-    element: (
-      <Layout>
-        <Contact />
-      </Layout>
-    ),
-  },
-  {
-    path: "/resume",
-    element: (
-      <Layout>
-        <Resume />
-      </Layout>
-    ),
-  },
-]);
+    basename: "/portfolio",
+  }
+);
 
 function App() {
   return <RouterProvider router={router} />;
