@@ -18,15 +18,15 @@ import "animate.css";
 function Skills() {
   return (
     <>
-      <div className="flex justify-between flex-1">
-        <div className="text-white w-[40%] text-5xl">
-          <div className="flex flex-col gap-3 relative top-5 left-12">
+      <div className="flex justify-between flex-1 max-sm:flex-col max-sm:justify-start max-sm:gap-5">
+        <div className="text-white w-[40%] text-5xl max-sm:w-full">
+          <div className="flex flex-col gap-3 md-sm:relative top-5 left-12 max-sm:gap-1 max-sm:w-full">
             <div>All of my projects I have </div>{" "}
             <div>made uptil now majorly</div>
             <div>include these skills</div>
           </div>
         </div>
-        <div className="grid grid-cols-4 w-[45%] items-center place-items-center bg-[#423F3E] rounded">
+        <div className="max-sm:gap-3 max-sm:p-3 grid grid-cols-4 w-[45%] items-center place-items-center bg-[#423F3E] rounded max-sm:w-full max-sm:grid-cols-2">
           <a
             href="https://en.wikipedia.org/wiki/C_(programming_language)"
             target="_blank"

@@ -100,27 +100,64 @@ function Navbar() {
           isMenuOpen ? "block" : "hidden"
         } sm:hidden absolute top-16 w-full left-0 bg-[#2B2B2B] z-50`}
       >
-        {["/", "/projects", "/skills", "/contact", "/resume"].map((path) => {
-          const pathName = path.split("/")[1];
-          const displayName = pathName
-            ? pathName.charAt(0).toUpperCase() + pathName.slice(1)
-            : "About";
+        <div className="flex flex-col items-center gap-4 w-full">
+          <NavLink
+            to="/"
+            onClick={() => setIsMenuOpen(false)}
+            className={({ isActive }) =>
+              isActive
+                ? "text-[#362222] bg-[#EEEEEE] font-bold text-xl h-full w-full py-2 text-center transition-all"
+                : "h-full text-[#EEEEEE] font-bold text-xl hover:bg-[#362222] hover:text-[#EEEEEE] w-full py-2 text-center transition-all"
+            }
+          >
+            About
+          </NavLink>
 
-          return (
-            <NavLink
-              key={path}
-              to={path}
-              onClick={() => setIsMenuOpen(false)}
-              className={({ isActive }) =>
-                isActive
-                  ? "text-[#362222] bg-[#EEEEEE] font-bold text-xl w-full py-2 text-center block"
-                  : "text-[#EEEEEE] font-bold text-xl hover:bg-[#362222] hover:text-[#EEEEEE] w-full py-2 text-center block"
-              }
-            >
-              {displayName}
-            </NavLink>
-          );
-        })}
+          <NavLink
+            to="/projects"
+            onClick={() => setIsMenuOpen(false)}
+            className={({ isActive }) =>
+              isActive
+                ? "text-[#362222] bg-[#EEEEEE] font-bold text-xl h-full w-full py-2 text-center transition-all"
+                : "h-full text-[#EEEEEE] font-bold text-xl hover:bg-[#362222] hover:text-[#EEEEEE] w-full py-2 text-center transition-all"
+            }
+          >
+            Projects
+          </NavLink>
+
+          <NavLink
+            to="/skills"
+            onClick={() => setIsMenuOpen(false)}
+            className={({ isActive }) =>
+              isActive
+                ? "text-[#362222] bg-[#EEEEEE] font-bold text-xl h-full w-full py-2 text-center transition-all"
+                : "h-full text-[#EEEEEE] font-bold text-xl hover:bg-[#362222] hover:text-[#EEEEEE] w-full py-2 text-center transition-all"
+            }
+          >
+            Skills
+          </NavLink>
+
+          <a
+            href="https://linktr.ee/shadyggs"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="h-full text-[#EEEEEE] font-bold text-xl hover:bg-[#362222] hover:text-[#EEEEEE] w-full py-2 text-center transition-all"
+          >
+            Contact
+          </a>
+
+          <NavLink
+            to="/resume"
+            onClick={() => setIsMenuOpen(false)}
+            className={({ isActive }) =>
+              isActive
+                ? "text-[#362222] bg-[#EEEEEE] font-bold text-xl h-full w-full py-2 text-center transition-all"
+                : "h-full text-[#EEEEEE] font-bold text-xl hover:bg-[#362222] hover:text-[#EEEEEE] w-full py-2 text-center transition-all"
+            }
+          >
+            Resume
+          </NavLink>
+        </div>
       </div>
     </div>
   );
